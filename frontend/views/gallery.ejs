@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/">
+    <title>ITMO 544</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+  </head>
+ <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">ITMO 544</a>
+      </div>
+        <ul class="nav navbar-nav nav-tabs">
+          <li><a href="/upload">Upload Image</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/pacoard/simple-image-gallery">Github</a></li>
+        </ul>
+    </div>
+  </nav>
+  <body style="padding-right: 20px; padding-left: 20px;">
+    <div class="jumbotron" style="padding-right: 10px; padding-left: 15px;">
+    
+
+
+
+
+<h2>Image gallery</h2>
+<p> If you don't see your images right away, just refresh the page. It takes time to upload your images to the cloud! </p>
+</div>
+
+<% images.forEach(function(image) { %>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title"><span class="badge"><%= image.id %></span></h3>
+    </div>
+    <div class="panel-body">
+      <p> <strong>Phone:</strong> <%= image.phone %> </p>
+      <p><strong>Email:</strong> <%= image.email %> </p>
+      <strong>Images:</strong> (black and white, then raw)
+      <img style="width:100px;height:100px;"src="<%= image.bwurl %>"/>
+      <img style="width:200px;height:200px;"src="<%= image.url %>"/>
+    </div>
+  </div>
+<% }); %>
+
+  
+      
+      
+  
+
+
+<!--
+<ul class="images">
+	<li *ngFor="let image of images" class="col-md-1">
+		<span class="badge">{{image.id}}</span>Phone: {{image.phone}}; Email: {{image.email}}; Images (bw and raw):
+		<img style="width:50px;height:50px;"src="{{image.bwpath}}"/>
+		<img style="width:150px;height:150px;"src="{{image.path}}"/>
+	</li>
+</ul>
+-->
+
+
+
+  
+  </body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/">
+    <title>ITMO 544</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+  </head>
+ <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">ITMO 544</a>
+      </div>
+        <ul class="nav navbar-nav nav-tabs">
+          <li><a href="/upload">Upload Image</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/pacoard/simple-image-gallery">Github</a></li>
+        </ul>
+    </div>
+  </nav>
+  <body style="padding-right: 20px; padding-left: 20px;">
+    <div class="jumbotron" style="padding-right: 10px; padding-left: 15px;">
+    
+
+
+
+
+
+<h2>Image upload form</h2>
+
+<form class="form-horizontal" action="/api/upload" method="post" encType="multipart/form-data">
+	<fieldset>
+		<div class="form-group">
+			<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+			<div class="col-lg-10">
+				<input 
+				type="text" 
+				class="form-control" 
+				id="inputEmail" 
+				placeholder="Email"
+				name="email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+			<div class="col-lg-10">
+				<input 
+				type="text" 
+				class="form-control" 
+				id="inputPhone" 
+				placeholder="Phone"
+				name="phone">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputFile" class="col-lg-2 control-label">Image file</label>
+			<div class="col-lg-10">
+				<input 
+				type="file"
+				class="form-control"
+				id="inputFile"
+				name="image"
+				required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+		<% if (submitted)  { %>
+			<div class="alert alert-dismissible alert-success">
+			  <strong>Well done!</strong> You successfully uploaded an image. It is now being processed in our servers
+			</div>
+		<% } %>
+		<% if (error)  { %>
+			<div class="alert alert-dismissible alert-danger">
+			  <strong>Oops!</strong> There is an error with your upload.
+			</div>
+		<% } %>
+
+		
+	</fieldset>
+</form>
+
+
+
+
+
+
+  </div>
+  </body>
+
+</html>
