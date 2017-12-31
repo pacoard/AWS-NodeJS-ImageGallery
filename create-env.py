@@ -37,7 +37,7 @@ print('\n')
 # Local files for internal operations
 AUX_FILE = 'auxfile.sh'
 JSON_OUTPUT = 'output.json'
-WEBAPP_REPOSITORY = 'git@github.com:illinoistech-itm/fgarciadelacorte.git'
+WEBAPP_REPOSITORY = 'https://github.com/pacoard/AWS-NodeJS-ImageGallery.git'
 # AWS parameters
 ELB_NAME = 'itmo544-elb'
 ELB_DNS = '' # to be set when ELB is up and running
@@ -87,7 +87,7 @@ def createUserData(type):
 		'#!/bin/bash\n'
 		'cd /home/ubuntu\n'
 		'runuser -l ubuntu -c \'git clone ' + WEBAPP_REPOSITORY + ' webapp\'\n'
-		'cd webapp/ITMO-544/mp3/' + type + '\n'
+		'cd ' + type + '\n'
 		'cp /home/ubuntu/node_modules -r .\n'
 		# PASSING DATA BY REPLACING VALUES IN THE SERVER SOURCE FILES
 		"sed -i 's/t_AVAILABILITY_ZONE/\""+ AVAILABILITY_ZONE +"\"/g' server.js\n"
